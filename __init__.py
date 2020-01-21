@@ -6,7 +6,7 @@ from mycroft.util.log import LOG, getLogger
 __author__ = 'pythona620/prasad'
 LOGGER = getLogger(__name__)
 
-class NumberAddingSkill(MycroftSkill):
+class NameAddingSkill(MycroftSkill):
 
 # MyNameIs = input("Ask user for something")
 # MyFriendNameIs = input("Ask user for something")
@@ -36,10 +36,10 @@ class NumberAddingSkill(MycroftSkill):
 		myname = self.get_numerical_response("get.myname")
 		# get myfriendname
 		myfriendname = self.get_numerical_response("get.myfriendname")
-		answer = myname + myfriendname
+		answer = 'myname' + 'myfriendname'
 		# yip=str(answer)
 		self.speak_dialog("friends",{"answer":answer})
 	def stop(self):		
 		pass
 def create_skill():
-	return NumberAddingSkill()
+	return NameAddingSkill()
