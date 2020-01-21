@@ -14,8 +14,8 @@ class NameAddingSkill(MycroftSkill):
 # str3 = MyNameIs+MyFriendNameIs
 # c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
 
-	myname = 
-	myfriendname = 
+	myname = input("Ask user for something")
+	myfriendname = input("Ask user for something")
 	
 	def get_numerical_response(self, dialog):
 		while True:
