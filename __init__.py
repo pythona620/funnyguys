@@ -21,7 +21,7 @@ class NameAddingSkill(MycroftSkill):
 		while True:
 			yip = self.get_response(dialog)
 			try:
-				yip = str
+				yip = 'str'
 				return yip
 			except ValueError:
 				self.speak_dialog("invalid.input")
@@ -33,12 +33,12 @@ class NameAddingSkill(MycroftSkill):
 		self.speak_dialog("start.game")
 
 		# get myname
-		myname = self.get_numerical_response("get.myname")
-		# get myfriendname
-		myfriendname = self.get_numerical_response("get.myfriendname")
-		answer = 'myname' + 'myfriendname'
-		yip=answer('text')
-		self.speak_dialog("friends",{"answer":yip})
+# 		myname = self.get_numerical_response("get.myname")
+# 		# get myfriendname
+# 		myfriendname = self.get_numerical_response("get.myfriendname")
+		answer = myname + myfriendname
+		yip=str('answer')
+		self.speak_dialog("friends",{"answer":answer})
 	def stop(self):		
 		pass
 def create_skill():
