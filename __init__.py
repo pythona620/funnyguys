@@ -37,8 +37,8 @@ class NameAddingSkill(MycroftSkill):
 		# get myfriendname
 		myfriendname = self.get_numerical_response("get.myfriendname")
 		answer = 'myname' + 'myfriendname'
-		# yip=str(answer)
-		self.speak_dialog("friends",{"answer":answer})
+		yip=answer('text')
+		self.speak_dialog("friends",{"answer":yip})
 	def stop(self):		
 		pass
 def create_skill():
