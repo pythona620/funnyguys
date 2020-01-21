@@ -14,21 +14,21 @@ class NumberAddingSkill(MycroftSkill):
 # str3 = MyNameIs+MyFriendNameIs
 # c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
 
-	myname = str
-	myfriendname = str
+	myname = 'str'
+	myfriendname = 'str'
 	
 	def get_numerical_response(self, dialog):
 		while True:
-			val = self.get_response(dialog)
+			yip = self.get_response(dialog)
 			try:
-				val = str
-				return val
+				yip = str
+				return yip
 			except ValueError:
 				self.speak_dialog("invalid.input")
 			except:
 				self.speak_dialog("input.error")
 
-	@intent_handler(IntentBuilder("").require("Adding").optionally("Play").optionally("Suggest"))
+	@intent_handler(IntentBuilder("").require("funny").optionally("Play").optionally("Suggest"))
 	def handle_start_game_intent(self, message):
 		self.speak_dialog("start.game")
 
@@ -38,7 +38,7 @@ class NumberAddingSkill(MycroftSkill):
 		myfriendname = self.get_numerical_response("get.myfriendname")
 		answer = myname + myfriendname
 		# yip=str(answer)
-		self.speak_dialog("add.two.numbers.is",{"answer":answer})
+		self.speak_dialog("friends",{"answer":answer})
 	def stop(self):		
 		pass
 def create_skill():
