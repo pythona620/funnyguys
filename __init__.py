@@ -14,10 +14,10 @@ class NameAddingSkill(MycroftSkill):
 # str3 = MyNameIs+MyFriendNameIs
 # c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
 
-	myname = input("Ask user for something")
-	myfriendname = input("Ask user for something")
+	myname = 0
+	myfriendname = 0
 	
-	def get_numerical_response(self, dialog):
+	def get_names(self, dialog):
 		while True:
 			yip = self.get_response(dialog)
 			try:
@@ -33,9 +33,9 @@ class NameAddingSkill(MycroftSkill):
 		self.speak_dialog("start.game")
 
 		# get myname
-		myname = self.get_numerical_response("get.myname")
+		myname = self.get_names("get.myname")
 		# get myfriendname
-		myfriendname = self.get_numerical_response("get.myfriendname")
+		myfriendname = self.get_names("get.myfriendname")
 		answer = myname + myfriendname
 		yip=str('answer')
 		self.speak_dialog("friends",{"answer":answer})
