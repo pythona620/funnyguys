@@ -17,10 +17,10 @@ class NameAddingSkill(MycroftSkill):
 # 	
 	
 	def get_names(self, dialog):
-		myname = str(self.get("dialog"))
-		myfriendname = str(self.get("dialog"))
+		yip = self.get_response(dialog)
+		return yip
 # 		while True:
-# 			yip = self.get_response(dialog)
+
 # 			try:
 # 				yip = 'abc'
 # 				return yip
