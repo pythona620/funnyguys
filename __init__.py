@@ -14,8 +14,8 @@ class NameAddingSkill(MycroftSkill):
 # str3 = MyNameIs+MyFriendNameIs
 # c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
 
-	myname = str(self.get("dialog"))
-	myfriendname = str(self.get("dialog"))
+# 	myname = str(self.get("dialog"))
+# 	myfriendname = str(self.get("dialog"))
 	
 	def get_names(self, dialog):
 		while True:
