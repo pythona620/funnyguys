@@ -21,7 +21,7 @@ class NameAddingSkill(MycroftSkill):
 		while True:
 			yip = self.get_response(dialog)
 			try:
-				yip = 'str'
+				yip = 'abc'
 				return yip
 			except ValueError:
 				self.speak_dialog("invalid.input")
