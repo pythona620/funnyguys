@@ -7,26 +7,39 @@ __author__ = 'pythona620/prasad'
 LOGGER = getLogger(__name__)
 
 class NameAddingSkill(MycroftSkill):
-from mycroft import MycroftSkill, intent_file_handler
-class Count(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
-    @intent_file_handler('funny.intent')
-    def handle_count(self, dialog):
-        self.speak_dialog(""start.game"")
-        
-            name1 = str(self.get("dialog"))
-            name2 = str(self.get("dialog"))
-            
-    
-            add = name1+name2
-            
-            print (add)
-           
-            answer = str(add)
-            answer = add['text']
-            self.speak_dialog("friends",{answer})
-    def stop(self):     
-        pass
+
+# MyNameIs = input("Ask user for something")
+# MyFriendNameIs = input("Ask user for something")
+
+# str3 = MyNameIs+MyFriendNameIs
+# c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
+
+	myname = str(self.get("dialog"))
+	myfriendname = str(self.get("dialog"))
+	
+	def get_names(self, dialog):
+		while True:
+			yip = self.get_response(dialog)
+			try:
+				yip = 'str'
+				return yip
+			except ValueError:
+				self.speak_dialog("invalid.input")
+			except:
+				self.speak_dialog("input.error")
+
+	@intent_handler(IntentBuilder("").require("funny").optionally("Play").optionally("Suggest"))
+	def handle_start_game_intent(self, message):
+		self.speak_dialog("start.game")
+
+		# get myname
+		myname = self.get_names("get.myname")
+		# get myfriendname
+		myfriendname = self.get_names("get.myfriendname")
+		answer = myname + myfriendname
+# 		tr=answer['text']
+		self.speak_dialog("friends",{"answer":answer})
+	def stop(self):		
+		pass
 def create_skill():
-    return Count()  
+	return NameAddingSkill()
