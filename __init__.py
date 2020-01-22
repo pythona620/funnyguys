@@ -14,19 +14,20 @@ class NameAddingSkill(MycroftSkill):
 # str3 = MyNameIs+MyFriendNameIs
 # c = MyNameIs +" "+"and"+" "+ MyFriendNameIs
 
-# 	myname = str(self.get("dialog"))
-# 	myfriendname = str(self.get("dialog"))
+# 	
 	
 	def get_names(self, dialog):
-		while True:
-			yip = self.get_response(dialog)
-			try:
-				yip = 'abc'
-				return yip
-			except ValueError:
-				self.speak_dialog("invalid.input")
-			except:
-				self.speak_dialog("input.error")
+		myname = str(self.get("dialog"))
+		myfriendname = str(self.get("dialog"))
+# 		while True:
+# 			yip = self.get_response(dialog)
+# 			try:
+# 				yip = 'abc'
+# 				return yip
+# 			except ValueError:
+# 				self.speak_dialog("invalid.input")
+# 			except:
+# 				self.speak_dialog("input.error")
 
 	@intent_handler(IntentBuilder("").require("funny").optionally("Play").optionally("Suggest"))
 	def handle_start_game_intent(self, message):
